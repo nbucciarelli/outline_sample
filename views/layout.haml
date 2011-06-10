@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title
+      = @title
+    - %w{ 960 application }.each do |css|
+      %link{ :href => "/stylesheets/#{css}.css", :rel => "stylesheet", :type => "text/css", :media => "screen", :charset => "utf-8" }
+    %meta{ :name => 'description', :content => ""  }
+    %meta{ :name => 'keywords', :content => ""  }
+  %body
+    .container_12
+      #header.grid_9
+        %h1
+          Header
+      #quote.grid_3
+        %h2
+          Smart quote
+      .clear
+      #content.grid_12
+        #main.grid_8
+          Main
+          = yield
+
+        #sidebar.grid_3
+          Sidebar
+        .clear
+      .clear
+      #footer.grid_12
+        Footer
+      .clear
+    .clear
